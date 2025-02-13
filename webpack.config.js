@@ -21,7 +21,7 @@ export default {
   devtool: 'inline-source-map',
   plugins: [
     new HTMLWebpackPlugin({
-      title: 'Project Name'
+      title: 'Foosball'
     })
   ],
   module: {
