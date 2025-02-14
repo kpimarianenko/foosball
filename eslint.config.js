@@ -40,6 +40,15 @@ export default tseslint.config(
     rules: {
       'prettier/prettier': 'error',
       'no-console': 'warn',
+      '@typescript-eslint/no-magic-numbers': [
+        'warn',
+        {
+          ignore: [-1, 0, 1],
+          ignoreEnums: true,
+          ignoreDefaultValues: true,
+          ignoreReadonlyClassProperties: true
+        }
+      ],
       '@typescript-eslint/no-unnecessary-template-expression': 'error',
       '@typescript-eslint/array-type': [
         'error',
@@ -114,7 +123,9 @@ export default tseslint.config(
     files: ['*.config.{js,ts}', '*.d.ts'],
     rules: {
       'import/no-default-export': 'off',
-      '@typescript-eslint/no-unsafe-assignment': 'off'
+      '@typescript-eslint/no-unsafe-assignment': 'off',
+      '@typescript-eslint/no-unsafe-member-access': 'off',
+      '@typescript-eslint/no-unsafe-call': 'off'
     }
   }
 );

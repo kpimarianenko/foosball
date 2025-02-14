@@ -1,3 +1,4 @@
+import CopyWebpackPlugin from 'copy-webpack-plugin';
 import HTMLWebpackPlugin from 'html-webpack-plugin';
 import path from 'path';
 import { fileURLToPath } from 'url';
@@ -20,6 +21,14 @@ export default {
   },
   devtool: 'inline-source-map',
   plugins: [
+    new CopyWebpackPlugin({
+      patterns: [
+        {
+          from: 'src/assets',
+          to: 'public'
+        }
+      ]
+    }),
     new HTMLWebpackPlugin({
       title: 'Foosball'
     })
